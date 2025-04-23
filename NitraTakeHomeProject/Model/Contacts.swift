@@ -17,4 +17,8 @@ struct MockContacts {
             Contact(id: "PeterThiel", displayName: "Peter Thiel", currentOnlineStatus: .offline, type: .invester),
             Contact(id: "LisaSu", displayName: "Lisa Su", currentOnlineStatus: .offline, type: .client)
         ]
+    
+    static func getContactById(_ id: String) -> Contact? {
+        return contacts.first { $0.id == id }
+    }
 }

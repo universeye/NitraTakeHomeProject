@@ -13,7 +13,8 @@ struct ChatsView: View {
     var body: some View {
         VStack(spacing: 0) {
             CustomNavigationBar(currentPage: .chats)
-            ChatsFilterPickerView()
+            ChatsFilterPickerView(viewModel: viewModel)
+                
             ScrollView {
                 ForEach(viewModel.chatMessages, id: \.self) { message in
                     ChatMessageCellView(message: message)
@@ -22,6 +23,11 @@ struct ChatsView: View {
         }
         .task {
             await viewModel.fetchMessages()
+        }
+        .onChange(of: viewModel.selectedChipType) { oldValue, newValue in
+            withAnimation(.bouncy) {   
+                viewModel.filterMessages(by: newValue)
+            }
         }
     }
 }

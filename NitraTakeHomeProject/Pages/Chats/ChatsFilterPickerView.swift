@@ -15,13 +15,13 @@ enum ChipType: String, CaseIterable {
 }
 
 struct ChatsFilterPickerView: View {
-    @State private var selectedType: ChipType = .all // Default selection
+    @ObservedObject var viewModel: ChatsViewModel
     
     var body: some View {
         ScrollView(.horizontal) {
             HStack(spacing: 8) {
                 ForEach(ChipType.allCases, id: \.self) { type in
-                    ChipCellView(type: type, selectedType: $selectedType)
+                    ChipCellView(type: type, selectedType: $viewModel.selectedChipType)
                 }
                 PlusCircleButton()
             }
@@ -36,5 +36,5 @@ struct ChatsFilterPickerView: View {
 }
 
 #Preview {
-    ChatsFilterPickerView()
+    ChatsFilterPickerView(viewModel: ChatsViewModel())
 }
