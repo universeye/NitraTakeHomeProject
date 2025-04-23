@@ -11,13 +11,11 @@ final class MockChatService {
     private static let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy/MM/dd HH:mm"
-        formatter.locale = Locale(identifier: "en_US_POSIX") // Set locale to avoid ambiguity
-        formatter.timeZone = TimeZone.current // Or specify a fixed timezone if needed
         return formatter
     }()
 
     private static func date(from string: String) -> Date {
-        return dateFormatter.date(from: string) ?? Date() // Provide a default date if parsing fails
+        return dateFormatter.date(from: string) ?? Date()
     }
 
     static func fetchChats() async throws -> [ChatModel] {

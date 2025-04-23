@@ -15,7 +15,7 @@ struct ChipCellView: View {
         Text(type.rawValue)
             .padding(.horizontal, 12)
             .padding(.vertical, 8)
-            .font(.system(size: 14, weight: selectedType == type ? .semibold : .regular))
+            .font(.system(size: 14, weight: .medium))
             .foregroundStyle(selectedType == type ? Colors.mainColor : Colors.secondaryText)
             .background(selectedType == type ? Color.white : Colors.mainColor)
             .cornerRadius(20)

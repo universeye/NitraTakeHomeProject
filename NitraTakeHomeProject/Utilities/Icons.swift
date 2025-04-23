@@ -19,5 +19,6 @@ enum Icons {
     static let magnifyingglassIcon = Image("magnifyingglass-icon")
     static let editIcon = Image("edit-icon")
     static let emptyImage = Image("empty_image")
+    static let NitraLogo = Image("Nitra-Logo")
 }
 

@@ -45,7 +45,7 @@ struct ChatMessageCellView: View {
                             .resizable()
                             .frame(width: 18, height: 18)
                         Spacer()
-                        Text("12:00 PM")
+                        Text(message.lastMessageTime.formattedRelativeTime())
                             .font(.subheadline)
                             .foregroundColor(.gray)
                     }

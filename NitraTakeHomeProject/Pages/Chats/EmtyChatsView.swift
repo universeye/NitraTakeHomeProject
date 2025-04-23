@@ -35,13 +35,9 @@ struct EmtyChatsView: View {
                             .frame(width: 20, height: 20)
                     }
                 }
-                .padding(.horizontal, 24)
-                .padding(.vertical, 16)
-                .background(Colors.mainAccent)
-                .clipShape(.rect(cornerRadius: 10))
-                .padding(.vertical, 12)
             }
-
+            .buttonStyle(.mainButton)
+            .padding(.vertical, 12)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }

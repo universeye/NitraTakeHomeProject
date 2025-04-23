@@ -12,6 +12,7 @@ struct ToDoView: View {
         VStack(spacing: 0) {
             CustomNavigationBar(currentPage: .toDo)
             Spacer()
+            Text("To-Do")
             Spacer()
         }
     }

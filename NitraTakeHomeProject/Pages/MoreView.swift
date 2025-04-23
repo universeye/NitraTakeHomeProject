@@ -20,6 +20,19 @@ struct MoreView: View {
                             .foregroundColor(.red)
                     }
                     .tint(Colors.tintGreen)
+                } footer: {
+                    HStack {
+                        Spacer()
+                        VStack {
+                            Icons.NitraLogo
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 150)
+                                .padding(.vertical, 16)
+                            Text("© 2025 Nitra")
+                        }
+                        Spacer()
+                    }
                 }
             }
         }
