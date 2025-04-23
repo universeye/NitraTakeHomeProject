@@ -11,7 +11,7 @@ struct ChatMessageCellView: View {
     let message: ChatModel
     
     var contact: Contact {
-        return MockContacts.contacts.first(where: { $0.id == message.contactId }) ?? MockContacts.contacts[0]
+        return MockContacts.getContactById(message.contactId) ?? MockContacts.contacts[0]
     }
     
     var isSenderSelf: Bool {
@@ -26,6 +26,17 @@ struct ChatMessageCellView: View {
                     .scaledToFill()
                     .frame(width: 48, height: 48)
                     .clipShape(Circle())
+                    .overlay(alignment: .bottomTrailing) {
+                        if contact.currentOnlineStatus == .online {
+                            Image(systemName: "circle.fill")
+                                .font(.system(size: 10))
+                                .foregroundStyle(Colors.tintGreen)
+                                .overlay {
+                                    Circle()
+                                        .stroke(Color.white, lineWidth: 2)
+                                }
+                        }
+                    }
                 VStack(alignment: .leading) {
                     HStack {
                         Text(contact.displayName)

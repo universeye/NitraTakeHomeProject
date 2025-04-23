@@ -13,5 +13,8 @@ enum Colors {
     static let secondaryText = Color("SecondaryText")
     static let secondaryAccent = Color("SecondaryAccent")
     static let mainAccent = Color("MainAccent")
+    static let mainAccentWithDarkMode = Color("MainAccentWithDarkMode")
+    static let tintGreen = Color("TintGreen")
+    static let tabUnselectedColor = Color("TabUnselectedColor")
 }
 

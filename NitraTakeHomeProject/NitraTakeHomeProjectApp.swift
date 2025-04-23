@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct NitraTakeHomeProjectApp: App {
+    @StateObject private var settingsManager = SettingsManager()
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(settingsManager)
         }
     }
 }

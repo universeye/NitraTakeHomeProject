@@ -8,15 +8,25 @@
 import SwiftUI
 
 struct MoreView: View {
+    @EnvironmentObject var settingsManager: SettingsManager
+    
     var body: some View {
         VStack(spacing: 0) {
             CustomNavigationBar(currentPage: .more)
-            Spacer()
-            Spacer()
+            Form {
+                Section {
+                    Toggle(isOn: $settingsManager.isClearAllChats) {
+                        Label("Clear all chats", systemImage: "trash")
+                            .foregroundColor(.red)
+                    }
+                    .tint(Colors.tintGreen)
+                }
+            }
         }
     }
 }
 
 #Preview {
     MoreView()
+        .environmentObject(SettingsManager())
 }

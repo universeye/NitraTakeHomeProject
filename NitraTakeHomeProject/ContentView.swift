@@ -8,32 +8,56 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var selection = 2
+    
     var body: some View {
-        TabView {
+        TabView(selection: $selection) {
             ToDoView()
                 .tabItem {
-                    Label(PagesType.toDo.title, image: .todoIcon)
+                    Icons.toDoIcon
+                        .renderingMode(.template)
+                        .foregroundStyle(.primary)
+                    Text(PagesType.toDo.title)
                 }
+                .tag(0)
             EventsView()
                 .tabItem {
-                    Label(PagesType.events.title, image: .eventsIcon)
+                    Icons.eventsIcon
+                        .renderingMode(.template)
+                        .foregroundStyle(.primary)
+                    Text(PagesType.events.title)
                 }
+                .tag(1)
             ChatsView()
                 .tabItem {
-                    Label(PagesType.chats.title, image: .chatsIcon)
+                    Icons.selectedChatsIcon
+                        .renderingMode(.template)
+                        .foregroundStyle(.primary)
+                    Text(PagesType.chats.title)
                 }
+                .tag(2)
             CalendarView()
                 .tabItem {
-                    Label(PagesType.calendar.title, image: .calendarIcon)
+                    Icons.calendarIcon
+                        .renderingMode(.template)
+                        .foregroundStyle(.primary)
+                    Text(PagesType.calendar.title)
                 }
+                .tag(3)
             MoreView()
                 .tabItem {
-                    Label(PagesType.more.title, image: .moreIcon)
+                    Icons.ellipsisIcon
+                        .renderingMode(.template)
+                        .foregroundStyle(.primary)
+                    Text(PagesType.more.title)
                 }
+                .tag(4)
         }
+        .accentColor(Colors.mainAccentWithDarkMode)
     }
 }
 
 #Preview {
     ContentView()
+        .environmentObject(SettingsManager())
 }
