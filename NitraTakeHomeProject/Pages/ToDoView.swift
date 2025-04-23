@@ -9,9 +9,10 @@ import SwiftUI
 
 struct ToDoView: View {
     var body: some View {
-        NavigationStack {
-            Text("ToDo")
-                .navigationTitle("ToDo")
+        VStack(spacing: 0) {
+            CustomNavigationBar(currentPage: .toDo)
+            Spacer()
+            Spacer()
         }
     }
 }

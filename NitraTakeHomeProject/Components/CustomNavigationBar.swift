@@ -11,15 +11,26 @@ struct CustomNavigationBar: View {
     let currentPage: PagesType
     
     var body: some View {
-        HStack {
-            Image(systemName: "ellipsis")
+        HStack(spacing: 20) {
+            Icons.ellipsisIcon
+                .resizable()
+                .scaledToFit()
+                .frame(width: 20, height: 20)
             
             Text(currentPage.title)
                 .font(.title)
             Spacer()
             
-            Image(systemName: "ellipsis")
-            Image(systemName: "ellipsis")
+            if currentPage == .chats {
+                Icons.magnifyingglassIcon
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 20, height: 20)
+                Icons.editIcon
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 20, height: 20)
+            }
         }
         .bold()
         .padding()

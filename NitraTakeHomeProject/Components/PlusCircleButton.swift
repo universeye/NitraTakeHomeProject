@@ -13,11 +13,11 @@ struct PlusCircleButton: View {
             
         } label: {
             Image(systemName: "plus")
-                .bold()
+                .font(.system(size: 16, weight: .semibold))
                 .foregroundStyle(.white)
-                .padding(10)
+                .padding(9)
                 .background(Colors.mainAccent)
-                .cornerRadius(20)
+                .clipShape(Circle())
         }
     }
 }

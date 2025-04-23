@@ -9,7 +9,11 @@ import SwiftUI
 
 struct EventsView: View {
     var body: some View {
-        Text("Events")
+        VStack(spacing: 0) {
+            CustomNavigationBar(currentPage: .events)
+            Spacer()
+            Spacer()
+        }
     }
 }
 

@@ -27,7 +27,8 @@ struct ChatsFilterPickerView: View {
             }
         }
         .scrollClipDisabled()
-        .padding()
+        .padding(.horizontal, 16)
+        .padding(.bottom, 16)
         .frame(maxWidth: .infinity)
         .background(Colors.mainColor)
     }

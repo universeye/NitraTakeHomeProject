@@ -8,13 +8,20 @@
 import SwiftUI
 
 struct ChatsView: View {
+    @StateObject var viewModel = ChatsViewModel()
+    
     var body: some View {
         VStack(spacing: 0) {
             CustomNavigationBar(currentPage: .chats)
             ChatsFilterPickerView()
-            Spacer()
-            Text("Hello, World!")
-            Spacer()
+            ScrollView {
+                ForEach(viewModel.chatMessages, id: \.self) { message in
+                    ChatMessageCellView(message: message)
+                }
+            }
+        }
+        .task {
+            await viewModel.fetchMessages()
         }
     }
 }

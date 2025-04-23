@@ -9,7 +9,11 @@ import SwiftUI
 
 struct MoreView: View {
     var body: some View {
-        Text("More")
+        VStack(spacing: 0) {
+            CustomNavigationBar(currentPage: .more)
+            Spacer()
+            Spacer()
+        }
     }
 }
 

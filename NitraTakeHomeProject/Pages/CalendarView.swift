@@ -9,7 +9,11 @@ import SwiftUI
 
 struct CalendarView: View {
     var body: some View {
-        Text("Calendar")
+        VStack(spacing: 0) {
+            CustomNavigationBar(currentPage: .calendar)
+            Spacer()
+            Spacer()
+        }
     }
 }
 

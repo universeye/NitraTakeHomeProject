@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "Nitra Take Home Project Icon (9).png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "Nitra Project Icon (6).png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "Nitra Project Icon (7).png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
