@@ -18,7 +18,7 @@ Nitra Take Home Projec.
 
 * Loading/Alert/Launch Screen/More
 
-<img src= "ReadmeSources/loadingpage.jpeg" width = 30% height = 30%> <img src= "ReadmeSources/emptyview.jpeg" width = 30% height = 30%> <img src= "ReadmeSources/morepage.jpeg" width = 30% height = 30%> <img src= "ReadmeSources/launchscreen.jpeg" width = 30% height = 30%>
+<img src= "ReadmeSources/loadingpage.jpeg" width = 30% height = 30%> <img src= "ReadmeSources/alertview.jpeg" width = 30% height = 30%> <img src= "ReadmeSources/morepage.jpeg" width = 30% height = 30%> <img src= "ReadmeSources/launchscreen.jpeg" width = 30% height = 30%>
 
 * Dark Mode
 
