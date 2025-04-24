@@ -31,6 +31,8 @@ Nitra Take Home Project.
 * Open specific tab first opening
 * Chat filter + animations
 * Custum alert
+* Custom overall tint color
+* Custom tabbar icon
 * Chatroom redacted loading view
 * Chatroom empty state view
 * Smooth transition
