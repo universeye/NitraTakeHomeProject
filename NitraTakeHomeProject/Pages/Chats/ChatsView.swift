@@ -10,11 +10,12 @@ import SwiftUI
 struct ChatsView: View {
     @StateObject var viewModel = ChatsViewModel()
     @EnvironmentObject var settingsManager: SettingsManager
+    private let currentPage: PagesType = .chats
     
     var body: some View {
         
         VStack(spacing: 0) {
-            CustomNavigationBar(currentPage: .chats)
+            CustomNavigationBar(currentPage: currentPage)
             
             
             switch viewModel.viewState {
@@ -38,18 +39,18 @@ struct ChatsView: View {
                     ScrollView {
                         ForEach(viewModel.chatMessages, id: \.self) { message in
                             ChatMessageCellView(message: message)
-                                .onTapGesture {
-                                    withAnimation(.smooth(duration: 0.3)) {
-                                        viewModel.showErrorAlert(title: "Error", message: "Failed to fetch messages.", buttonAction: {
-                                            viewModel.clearErrorAlert()
-                                        })
-                                    }
-                                    withAnimation(.smooth(duration: 0.3)) {
-                                        viewModel.viewState = .error(NSError(domain: "Error", code: 0, userInfo: [NSLocalizedDescriptionKey: "Failed to fetch messages."]))
-                                    }
-                                }
                         }
                     }
+                }
+
+                if settingsManager.isShowAlertButton {
+                    Button {
+                        viewModel.showTestAlert()
+                    } label: {
+                    Label("Test alert", systemImage: "exclamationmark.triangle")
+                        .foregroundColor(.white)
+                    }
+                    .buttonStyle(.mainButton)
                 }
             case .error(_):
                 Spacer()

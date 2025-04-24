@@ -9,4 +9,5 @@ import SwiftUI
 
 class SettingsManager: ObservableObject {
     @Published var isClearAllChats: Bool = false
+    @Published var isShowAlertButton: Bool = false
 }

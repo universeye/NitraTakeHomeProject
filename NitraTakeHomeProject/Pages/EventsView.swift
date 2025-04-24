@@ -8,10 +8,13 @@
 import SwiftUI
 
 struct EventsView: View {
+    private let currentPage: PagesType = .events
+    
     var body: some View {
         VStack(spacing: 0) {
-            CustomNavigationBar(currentPage: .events)
+            CustomNavigationBar(currentPage: currentPage)
             Spacer()
+            Text(currentPage.title).bold()
             Spacer()
         }
     }

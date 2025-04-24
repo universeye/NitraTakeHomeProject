@@ -8,10 +8,13 @@
 import SwiftUI
 
 struct CalendarView: View {
+    private let currentPage: PagesType = .calendar
+    
     var body: some View {
         VStack(spacing: 0) {
-            CustomNavigationBar(currentPage: .calendar)
+            CustomNavigationBar(currentPage: currentPage)
             Spacer()
+            Text(currentPage.title).bold()
             Spacer()
         }
     }

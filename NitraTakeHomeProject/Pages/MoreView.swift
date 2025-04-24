@@ -9,15 +9,29 @@ import SwiftUI
 
 struct MoreView: View {
     @EnvironmentObject var settingsManager: SettingsManager
+    private let currentPage: PagesType = .more
     
     var body: some View {
         VStack(spacing: 0) {
-            CustomNavigationBar(currentPage: .more)
+            CustomNavigationBar(currentPage: currentPage)
             Form {
                 Section {
                     Toggle(isOn: $settingsManager.isClearAllChats) {
-                        Label("Clear all chats", systemImage: "trash")
-                            .foregroundColor(.red)
+                        HStack {
+                            Image(systemName: "trash.fill")
+                                .foregroundStyle(.red)
+                            Text("Clear all chats")
+                        }
+                    }
+                    .tint(Colors.tintGreen)
+                    
+                    Toggle(isOn: $settingsManager.isShowAlertButton) {
+                        HStack {
+                            Image(systemName: "exclamationmark.triangle.fill")
+                                .symbolRenderingMode(.palette)
+                                .foregroundStyle(.black, .yellow)
+                            Text("Show test alert button")
+                        }
                     }
                     .tint(Colors.tintGreen)
                 } footer: {
@@ -29,7 +43,10 @@ struct MoreView: View {
                                 .scaledToFit()
                                 .frame(width: 150)
                                 .padding(.vertical, 16)
-                            Text("© 2025 Nitra")
+                            HStack {
+                                Text("© 2025 Nitra")
+                                Text("Version \(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0") (\(Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "1"))")
+                            }
                         }
                         Spacer()
                     }

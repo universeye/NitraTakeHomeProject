@@ -82,5 +82,15 @@ class ChatsViewModel: ObservableObject {
             }
         }
     }
+
+    @MainActor
+    func showTestAlert() {
+        showErrorAlert(title: "Error", message: "Failed to fetch messages.", buttonAction: {
+            self.clearErrorAlert()
+        })
+        withAnimation(.smooth(duration: 0.3)) {
+            viewState = .error(NSError(domain: "Error", code: 0, userInfo: [NSLocalizedDescriptionKey: "Failed to fetch messages."]))
+        }
+    }
 }
 
