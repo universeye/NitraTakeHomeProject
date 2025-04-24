@@ -1,7 +1,7 @@
 <img src= "ReadmeSources/nitraicon.png" width = 10% height = 10%>
 
 # Nitra Take Home Project
-Nitra Take Home Project. 
+Nitra Take Home Project. Built natively in Swif.
 
 # Menu
 * [Screenshots](#screenshots)
