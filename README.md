@@ -1,6 +1,6 @@
 
 # Nitra Take Home Project
-Nitra Take Home Projec. 
+Nitra Take Home Project. 
 
 # Menu
 * [Screenshots](#screenshots)
