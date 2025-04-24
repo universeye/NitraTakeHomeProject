@@ -34,6 +34,8 @@ struct MoreView: View {
                         }
                     }
                     .tint(Colors.tintGreen)
+                } header: {
+                    Text("Debug")
                 } footer: {
                     HStack {
                         Spacer()

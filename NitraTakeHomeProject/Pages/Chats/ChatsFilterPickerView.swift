@@ -7,13 +7,6 @@
 
 import SwiftUI
 
-enum ChipType: String, CaseIterable {
-    case all = "All"
-    case unread = "Unread"
-    case investers = "Investors"
-    case clients = "Clients"
-}
-
 struct ChatsFilterPickerView: View {
     @ObservedObject var viewModel: ChatsViewModel
     

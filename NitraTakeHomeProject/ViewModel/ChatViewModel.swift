@@ -11,11 +11,12 @@ class ChatsViewModel: ObservableObject {
     @Published var selectedChipType: ChipType = .all
     @Published var chatMessages: [ChatModel] = []
     @Published var viewState: ViewState = .idle
-    @Published var allMessages: [ChatModel] = []
     @Published var errorAlertTitle: String?
+    
     var errorAlertMessage: String? = "Something happened"
     var errorAlertButtonTitle: String = "Try again"
     var errorAlertButtonAction: (() -> Void)?
+    var allMessages: [ChatModel] = []
     
     @MainActor
     func filterMessages(by chipType: ChipType) {
