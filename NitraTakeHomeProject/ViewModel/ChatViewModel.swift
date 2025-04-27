@@ -38,6 +38,8 @@ class ChatsViewModel: ObservableObject {
         }.sorted(by: { $0.lastMessageTime > $1.lastMessageTime })
     }
     
+    
+    //MARK: - API
     @MainActor
     func fetchMessages() async {
         withAnimation(.smooth(duration: 0.35)) {
@@ -64,12 +66,15 @@ class ChatsViewModel: ObservableObject {
         }
     }
 
+    
+    
+    //MARK: - Alert
     func showErrorAlert(title: String, message: String, buttonAction: @escaping () -> Void) {
         errorAlertTitle = title
         errorAlertMessage = message
         errorAlertButtonAction = buttonAction
     }
-
+    
     @MainActor
     func clearErrorAlert() {
         withAnimation(.smooth(duration: 0.3)) {
