@@ -3,6 +3,10 @@
 # Nitra Take Home Project
 Nitra Take Home Project. Built natively in Swift.
 
+### Demo Video
+
+[Youtube Link](https://youtu.be/VrJt7Jc8sTk?si=aofgRoS19Nz641Yw)
+
 # Menu
 * [Screenshots](#screenshots)
 * [Tech](#Tech)
